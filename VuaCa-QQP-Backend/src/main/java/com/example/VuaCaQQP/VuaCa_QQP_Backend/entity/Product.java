@@ -31,4 +31,8 @@ public class Product {
     boolean isActive;
     @Column(name = "created_at")
     Date createAt;
+    @Column(name = "information")
+    String information;
+    @Column(name = "cachbaoquan")
+    String cachbaoquan;
 }

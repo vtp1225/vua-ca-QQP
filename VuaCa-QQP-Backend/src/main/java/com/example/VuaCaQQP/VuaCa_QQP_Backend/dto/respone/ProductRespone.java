@@ -12,11 +12,12 @@ import java.util.Date;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductRespone {
-    int product_id;
     String name;
     private Double price;
     String imageUrl;
     String description;
     boolean isActive;
     Date createAt;
+    String information;
+    String cachbaoquan;
 }

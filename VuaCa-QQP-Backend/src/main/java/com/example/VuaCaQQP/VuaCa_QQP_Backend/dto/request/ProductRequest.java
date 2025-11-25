@@ -18,4 +18,6 @@ public class ProductRequest {
     String description;
     boolean isActive;
     Date createAt;
+    String information;
+    String cachbaoquan;
 }

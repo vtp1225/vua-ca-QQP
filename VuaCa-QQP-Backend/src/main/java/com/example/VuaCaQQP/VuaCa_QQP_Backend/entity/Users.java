@@ -1,5 +1,6 @@
 package com.example.VuaCaQQP.VuaCa_QQP_Backend.entity;
 
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.Enum.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -28,10 +29,9 @@ public class Users {
     String phone_number;
     @Column(name = "address")
     String address;
+    @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    String role;
+    UserRole role;
     @Column(name = "created_at")
     Date created_at;
-
-
 }

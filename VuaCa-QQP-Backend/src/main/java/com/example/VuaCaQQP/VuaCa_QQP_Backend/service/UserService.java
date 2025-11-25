@@ -1,14 +1,18 @@
 package com.example.VuaCaQQP.VuaCa_QQP_Backend.service;
 
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ProductRespone;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.UsersRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Product;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Users;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.ProductMapper;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.UsersMapper;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.repository.ProductRepository;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.repository.UsersRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.ProductMapper;
 import org.springframework.stereotype.Service;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.repository.ProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +21,14 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE,makeFinal = true)
-public class ProductService {
-    ProductRepository repository;
-    ProductMapper mapper;
-    public List<ProductRespone> getAllProducts(){
-        List<Product> products = repository.findAll();
-        List<ProductRespone> respones = new ArrayList<>();
-        for (Product product : products) {
-            respones.add(mapper.toProductRespone(product));
+public class UserService {
+    UsersRepository repository;
+    UsersMapper mapper;
+    public List<UsersRespone> getAllUsers(){
+        List<Users> users = repository.findAll();
+        List<UsersRespone> respones = new ArrayList<>();
+        for (Users us : users) {
+            respones.add(mapper.toUserRespone(us));
         }
         return respones;
     }
