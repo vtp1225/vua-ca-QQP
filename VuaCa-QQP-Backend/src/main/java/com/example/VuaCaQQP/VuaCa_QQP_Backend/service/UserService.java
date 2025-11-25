@@ -1,5 +1,6 @@
 package com.example.VuaCaQQP.VuaCa_QQP_Backend.service;
 
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request.UserRequest;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ProductRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.UsersRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Product;
@@ -15,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -26,10 +28,16 @@ public class UserService {
     UsersMapper mapper;
     public List<UsersRespone> getAllUsers(){
         List<Users> users = repository.findAll();
-        List<UsersRespone> respones = new ArrayList<>();
+        List<UsersRespone> responses = new ArrayList<>();
         for (Users us : users) {
-            respones.add(mapper.toUserRespone(us));
+            responses.add(mapper.toUserRespone(us));
         }
-        return respones;
+        return responses;
+    }
+    public UsersRespone createUser(UserRequest request) {
+        Users user = mapper.toUser(request);
+        user.setCreated_at(new Date());
+        Users savedUser = repository.save(user);
+        return mapper.toUserRespone(savedUser);
     }
 }
