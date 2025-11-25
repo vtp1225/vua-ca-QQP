@@ -1,8 +1,21 @@
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+
+    const navigate = useNavigate();
+    
+    const handleCheckout=()=>{
+        navigate('/checkout')
+    }
+
+    const handleHome=()=>{
+        navigate('/home')
+    }
+
+
     // State giả lập dữ liệu giỏ hàng để có thể tương tác
     const [cartItems, setCartItems] = useState([
         {
@@ -161,10 +174,10 @@ export default function Cart() {
                                 </div>
 
                                 <div className="mt-8 space-y-3">
-                                    <button className="w-full py-3.5 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-secondary hover:shadow-secondary/20 hover:-translate-y-0.5 transition-all duration-300">
+                                    <button onClick={handleCheckout} className="w-full py-3.5 rounded-xl bg-primary text-white font-bold shadow-lg shadow-primary/20 hover:bg-secondary hover:shadow-secondary/20 hover:-translate-y-0.5 transition-all duration-300">
                                         Tiến hành thanh toán
                                     </button>
-                                    <button className="w-full py-3.5 rounded-xl border border-primary/20 dark:border-white/20 text-primary dark:text-white font-bold hover:bg-primary/5 dark:hover:bg-white/5 transition-colors">
+                                    <button onClick={handleHome} className="w-full py-3.5 rounded-xl border border-primary/20 dark:border-white/20 text-primary dark:text-white font-bold hover:bg-primary/5 dark:hover:bg-white/5 transition-colors">
                                         Tiếp tục mua sắm
                                     </button>
                                 </div>

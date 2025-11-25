@@ -9,6 +9,10 @@ export default function Login() {
         navigate('/home');
     }
 
+    const handleRegiser= ()=>{
+        navigate('/register');
+    }
+
     return (
         <div className="font-body min-h-screen flex items-center justify-center bg-background-light relative overflow-hidden selection:bg-secondary selection:text-white">
 
@@ -27,7 +31,7 @@ export default function Login() {
                             <span className="material-symbols-outlined text-4xl">phishing</span>
                         </div>
                         <h2 className="font-display text-3xl font-bold text-white tracking-tight">
-                            Fish<span className="text-secondary">Co</span>
+                            Q<span className="text-secondary">P</span>Q
                         </h2>
                     </div>
 
@@ -93,7 +97,7 @@ export default function Login() {
 
                     {/* Register Link */}
                     <div className="mt-8 text-center text-sm text-white/60">
-                        Chưa có tài khoản? <a href="#" className="font-bold text-white hover:text-secondary transition-colors">Đăng ký ngay</a>
+                        Chưa có tài khoản? <a href="#" onClick={handleRegiser} className="font-bold text-white hover:text-secondary transition-colors">Đăng ký ngay</a>
                     </div>
 
                 </div>

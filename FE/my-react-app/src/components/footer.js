@@ -30,9 +30,9 @@ export default function Footer() {
                     <div className="space-y-4">
                         <div className="flex items-center gap-2">
                             <span className="material-symbols-outlined text-3xl text-secondary">phishing</span>
-                            <h3 className="font-display text-2xl font-bold text-white">
-                                Fish<span className="text-secondary">Co</span>
-                            </h3>
+                            <h2 className="font-display text-2xl font-bold text-white tracking-tight">
+                                Q<span className="text-secondary">P</span>Q
+                            </h2>
                         </div>
                         <p className="text-sm text-white/70 leading-relaxed max-w-xs">
                             Mang tinh hoa của đại dương đến bàn ăn của bạn. Cam kết chất lượng tươi ngon và bền vững hàng đầu.

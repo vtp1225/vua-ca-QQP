@@ -34,7 +34,7 @@ export default function Header() {
                                 <span className="material-symbols-outlined text-3xl text-white group-hover:text-secondary transition-colors duration-300">phishing</span>
                             </div>
                             <h2 className="font-display text-2xl font-bold text-white tracking-tight">
-                                Fish<span className="text-secondary">Co</span>
+                                Q<span className="text-secondary">P</span>Q
                             </h2>
                         </div>
 
