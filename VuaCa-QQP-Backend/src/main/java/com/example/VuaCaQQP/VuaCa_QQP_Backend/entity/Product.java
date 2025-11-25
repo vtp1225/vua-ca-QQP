@@ -27,6 +27,10 @@ public class Product {
     String imageUrl;
     @Column(name = "description")
     String description;
+    @Column(name="information")
+    String information;
+    @Column(name = "cachbaoquan")
+    String cachbaoquan;
     @Column(name = "is_active")
     boolean isActive;
     @Column(name = "created_at")

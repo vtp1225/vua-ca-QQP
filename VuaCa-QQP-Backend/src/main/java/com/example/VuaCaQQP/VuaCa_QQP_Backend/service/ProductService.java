@@ -2,6 +2,8 @@ package com.example.VuaCaQQP.VuaCa_QQP_Backend.service;
 
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ProductRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Product;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.AppExceptions;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.ErrorCode;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -27,5 +29,9 @@ public class ProductService {
             respones.add(mapper.toProductRespone(product));
         }
         return respones;
+    }
+    public ProductRespone getProductById(Integer id){
+        Product product = repository.findById(id).orElseThrow(()-> new AppExceptions(ErrorCode.INVALID_KEY));
+        return mapper.toProductRespone(product);
     }
 }

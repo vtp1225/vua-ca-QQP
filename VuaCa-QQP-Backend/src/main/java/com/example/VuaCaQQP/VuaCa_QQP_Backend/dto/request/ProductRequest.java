@@ -16,6 +16,8 @@ public class ProductRequest {
     private Double price;
     String imageUrl;
     String description;
+    String information;
+    String cachbaoquan;
     boolean isActive;
     Date createAt;
 }
