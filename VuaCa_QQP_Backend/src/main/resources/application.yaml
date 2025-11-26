@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /VuaCaQPQ
+spring:
+  application:
+    name: VuaCa-QQP-Backend
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  datasource:
+    url: "jdbc:mysql://localhost:3307/WebBanCaGit?useUnicode=true&characterEncoding=UTF-8"
+    username: "root"
+    password: "root"
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+jwt:
+  signerKey: "61b8e4c9638f759c9112471bdfff29f02310f0e6e1053fa9c04d924d3d9869fc"
+  valid-duration: 3600  #Second - 1 hour
+  refreshable-duration: 360000 #Second - 1000 hours
