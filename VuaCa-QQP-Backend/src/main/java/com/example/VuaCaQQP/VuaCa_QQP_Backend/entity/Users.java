@@ -18,20 +18,20 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id",  nullable = false)
-    int user_id;
+    int userId;
     @Column(name = "full_name")
-    String full_name;
+    String fullName;
     @Column(name = "email")
     String email;
     @Column(name = "password_hash")
-    String password_hash;
+    String passwordHash;
     @Column(name = "phone_number")
-    String phone_number;
+    String phoneNumber;
     @Column(name = "address")
     String address;
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     UserRole role;
     @Column(name = "created_at")
-    Date created_at;
+    Date createdAt;
 }

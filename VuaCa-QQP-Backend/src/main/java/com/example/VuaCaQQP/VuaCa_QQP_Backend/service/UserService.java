@@ -5,6 +5,8 @@ import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ProductRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.UsersRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Product;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Users;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.AppExceptions;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.ErrorCode;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.ProductMapper;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.UsersMapper;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.repository.ProductRepository;
@@ -35,8 +37,11 @@ public class UserService {
         return responses;
     }
     public UsersRespone createUser(UserRequest request) {
+
+        if(repository.existsByEmail(request.getEmail()))
+            throw new AppExceptions(ErrorCode.USER_EXISTED);
         Users user = mapper.toUser(request);
-        user.setCreated_at(new Date());
+        user.setCreatedAt(new Date());
         Users savedUser = repository.save(user);
         return mapper.toUserRespone(savedUser);
     }

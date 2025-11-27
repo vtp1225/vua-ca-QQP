@@ -2,7 +2,7 @@ package com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request;
 
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.Enum.UserRole;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,13 +16,32 @@ import java.util.Date;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserRequest {
-    String full_name;
+    @NotBlank(message = "Họ và tên không được để trống")
+    @Size(min = 2, max = 100, message = "Họ và tên phải từ 2 đến 100 ký tự")
+    @Pattern(regexp = "^[\\p{L} ]+$", message = "Họ và tên chỉ được chứa chữ cái và khoảng trắng")
+    String fullName;
+
+    @NotBlank(message = "Email không được để trống")
+    @Email(message = "Email không hợp lệ")
     String email;
 
+    @NotBlank(message = "Mật khẩu không được để trống")
     @Size(min = 8, max = 50, message = "Mật khẩu phải lớn hơn 8 ký tự và nhỏ hơn 50 ký tự")
-    String password_hash;
-    String phone_number;
+    String passwordHash;
+
+    @NotBlank(message = "Số điện thoại không được để trống")
+    @Pattern(
+            regexp = "^0\\d{9,10}$",
+            message = "Số điện thoại phải bắt đầu bằng 0 và có 10–11 chữ số"
+    )
+    String phoneNumber;
+
+    @Size(min = 5, max = 255, message = "Địa chỉ phải từ 5 đến 255 ký tự")
     String address;
+
+    @NotNull(message = "Quyền người dùng không được để trống")
     UserRole role;
-    Date created_at;
+
+    @PastOrPresent(message = "Thời gian tạo phải là hiện tại hoặc trong quá khứ")
+    Date createdAt;
 }

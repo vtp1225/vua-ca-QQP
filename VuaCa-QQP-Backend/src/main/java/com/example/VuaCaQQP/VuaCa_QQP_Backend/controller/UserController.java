@@ -10,6 +10,7 @@ import com.example.VuaCaQQP.VuaCa_QQP_Backend.service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping
-    private ApiRespone<UsersRespone> createUser(@RequestBody UserRequest request){
+    private ApiRespone<UsersRespone> createUser(@Validated @RequestBody UserRequest request){
         return ApiRespone.<UsersRespone>builder()
                 .code(200)
                 .message("OK")
