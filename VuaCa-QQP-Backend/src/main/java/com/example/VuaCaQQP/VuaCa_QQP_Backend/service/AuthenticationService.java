@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class AuthenticationService {
     UsersRepository repository;
 
-    boolean authenticate(AuthenticationRequest request) {
+    public boolean authenticate(AuthenticationRequest request) {
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new AppExceptions(ErrorCode.USER_NOT_EXISTED));
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
