@@ -1,7 +1,9 @@
 package com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone;
 
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.Enum.UserRole;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +16,13 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UsersRespone {
-    String full_name;
+public class UserResponse {
+    int userId;
+    String fullName;
     String email;
-    String password_hash;
-    String phone_number;
+    String passwordHash;
+    String phoneNumber;
     String address;
     UserRole role;
-    Date created_at;
+    Date createdAt;
 }

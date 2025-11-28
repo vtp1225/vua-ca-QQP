@@ -26,7 +26,7 @@ public class UserRequest {
     String email;
 
     @NotBlank(message = "Mật khẩu không được để trống")
-    @Size(min = 8, max = 50, message = "Mật khẩu phải lớn hơn 8 ký tự và nhỏ hơn 50 ký tự")
+    @Size(min = 8, max = 50, message = "PASSWORD_INVALID")
     String passwordHash;
 
     @NotBlank(message = "Số điện thoại không được để trống")

@@ -10,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder
-public class ApiRespone <T>{
+public class ApiResponse<T>{
     int code=300;
     private String message;
     private T result;

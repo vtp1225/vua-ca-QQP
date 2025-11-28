@@ -1,11 +1,9 @@
 package com.example.VuaCaQQP.VuaCa_QQP_Backend.controller;
 
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request.UserRequest;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ApiRespone;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ProductRespone;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.UsersRespone;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Users;
-import com.example.VuaCaQQP.VuaCa_QQP_Backend.service.ProductService;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request.UserUpdateRequest;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.ApiResponse;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.UserResponse;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -22,20 +20,30 @@ import java.util.List;
 public class UserController {
     UserService userService;
     @GetMapping
-    private ApiRespone<List<UsersRespone>> getProducts(){
-        return ApiRespone.<List<UsersRespone>>builder()
-                .code(200)
-                .message("OK")
+    private ApiResponse<List<UserResponse>> getUsers(){
+        return ApiResponse.<List<UserResponse>>builder()
                 .result(userService.getAllUsers())
                 .build();
     }
 
+    @GetMapping("/{userId}")
+    ApiResponse<UserResponse> getUser(@PathVariable("userId") int userId) {
+        return ApiResponse.<UserResponse>builder()
+                .result(userService.getUser(userId))
+                .build();
+    }
+
     @PostMapping
-    private ApiRespone<UsersRespone> createUser(@Validated @RequestBody UserRequest request){
-        return ApiRespone.<UsersRespone>builder()
-                .code(200)
-                .message("OK")
+    private ApiResponse<UserResponse> createUser(@Validated @RequestBody UserRequest request){
+        return ApiResponse.<UserResponse>builder()
                 .result(userService.createUser(request))
+                .build();
+    }
+
+    @PutMapping("/{userId}")
+    private ApiResponse<UserResponse> updateUser(@PathVariable int userId, @RequestBody UserUpdateRequest request){
+        return ApiResponse.<UserResponse>builder()
+                .result(userService.updateUser(userId,request))
                 .build();
     }
 }
