@@ -41,6 +41,6 @@ public class XulyException {
 
         return ResponseEntity.badRequest().body(apiResponse);
 
-}
+    }
 
 }
