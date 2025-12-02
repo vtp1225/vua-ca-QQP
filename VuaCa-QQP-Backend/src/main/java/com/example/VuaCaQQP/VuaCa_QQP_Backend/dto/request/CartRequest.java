@@ -1,0 +1,21 @@
+package com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request;
+
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Users;
+import jakarta.persistence.Column;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.Date;
+
+@Slf4j
+@Data
+@NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class CartRequest {
+    int userId;
+    Date createat;
+    Date updateat;
+}
