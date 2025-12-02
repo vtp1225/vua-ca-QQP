@@ -28,8 +28,8 @@ public class ProductController {
                 .build();
     }
     @GetMapping("{id}")
-    ApiRespone<ProductRespone> getProductById(@PathVariable Integer id){
-        return ApiRespone.<ProductRespone>builder()
+    ApiResponse<ProductRespone> getProductById(@PathVariable Integer id){
+        return ApiResponse.<ProductRespone>builder()
                 .code(200)
                 .message("OK")
                 .result(productService.getProductById(id))

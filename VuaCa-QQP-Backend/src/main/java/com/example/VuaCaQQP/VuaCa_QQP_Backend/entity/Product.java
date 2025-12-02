@@ -17,17 +17,17 @@ import java.util.Date;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id",  nullable = false)
-    int  product_id;
+    @Column(name = "product_id", nullable = false)
+    int product_id;
     @Column(name = "name", nullable = false)
     String name;
     @Column(name = "price", nullable = false)
     private Double price;
-    @Column(name ="image_url")
+    @Column(name = "image_url")
     String imageUrl;
     @Column(name = "description")
     String description;
-    @Column(name="information")
+    @Column(name = "information")
     String information;
     @Column(name = "cachbaoquan")
     String cachbaoquan;
@@ -35,8 +35,4 @@ public class Product {
     boolean isActive;
     @Column(name = "created_at")
     Date createAt;
-    @Column(name = "information")
-    String information;
-    @Column(name = "cachbaoquan")
-    String cachbaoquan;
 }

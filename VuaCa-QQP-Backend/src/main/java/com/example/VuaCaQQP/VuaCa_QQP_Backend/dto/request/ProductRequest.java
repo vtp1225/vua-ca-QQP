@@ -20,6 +20,4 @@ public class ProductRequest {
     String cachbaoquan;
     boolean isActive;
     Date createAt;
-    String information;
-    String cachbaoquan;
 }

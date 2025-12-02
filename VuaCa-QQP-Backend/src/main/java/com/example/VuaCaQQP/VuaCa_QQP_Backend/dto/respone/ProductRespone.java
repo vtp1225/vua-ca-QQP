@@ -20,6 +20,4 @@ public class ProductRespone {
     String cachbaoquan;
     boolean isActive;
     Date createAt;
-    String information;
-    String cachbaoquan;
 }
