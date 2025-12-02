@@ -60,4 +60,9 @@ public class UserService {
         Users updatedUser = repository.save(user);
         return mapper.toUserResponse(updatedUser);
     }
+
+    public void deleteUser(int userID) {
+        Users user = repository.findById(userID).orElseThrow(() -> new AppExceptions(ErrorCode.USER_NOT_EXISTED));
+        repository.delete(user);
+    }
 }
