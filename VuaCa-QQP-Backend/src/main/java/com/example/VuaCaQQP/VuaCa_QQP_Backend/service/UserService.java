@@ -56,8 +56,14 @@ public class UserService {
     public UserResponse updateUser(int userID, UserUpdateRequest request) {
         Users user = repository.findById(userID).orElseThrow(() -> new AppExceptions(ErrorCode.USER_NOT_EXISTED));
         mapper.updateUser(user,request);
-
+        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
+        user.setPasswordHash(passwordEncoder.encode(request.getPasswordHash()));
         Users updatedUser = repository.save(user);
         return mapper.toUserResponse(updatedUser);
+    }
+
+    public void deleteUser(int userID) {
+        Users user = repository.findById(userID).orElseThrow(() -> new AppExceptions(ErrorCode.USER_NOT_EXISTED));
+        repository.delete(user);
     }
 }
