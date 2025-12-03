@@ -1,7 +1,6 @@
-package com.example.VuaCaQQP.VuaCa_QQP_Backend.entity;
+package com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -11,10 +10,10 @@ import java.util.Date;
 
 @Slf4j
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProductRequest {
+public class ProductRespone {
+    int productId;
     String name;
     private Double price;
     String imageUrl;
