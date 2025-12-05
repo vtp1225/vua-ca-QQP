@@ -35,6 +35,9 @@ public class ProductService {
         return mapper.toProductRespone(product);
     }
     public List<ProductRespone> getAllProductsByName(String name){
+        if(name==null){
+            return getAllProducts();
+        }
         List<Product> products = repository.findByNameContainingIgnoreCase(name);
         List<ProductRespone> respones = new ArrayList<>();
         for (Product product : products) {
