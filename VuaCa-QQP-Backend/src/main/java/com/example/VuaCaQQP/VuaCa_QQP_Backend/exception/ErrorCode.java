@@ -13,6 +13,7 @@ public enum ErrorCode {
     EMAIL_INVALID(1009, "Email invalid", HttpStatus.BAD_REQUEST),
     PASSWORD_INVALID(1010, "Password invalid, 8<pass<50", HttpStatus.BAD_REQUEST),
     UNAUTHENTICATED(1006, "Unauthenticated", HttpStatus.UNAUTHORIZED),
+    INVALID_FORMAT(1007, "Invalid format", HttpStatus.BAD_REQUEST),
     UNAUTHORIZED(1007, "UNAUTHORIZED", HttpStatus.FORBIDDEN);
     private int code;
     private String message;

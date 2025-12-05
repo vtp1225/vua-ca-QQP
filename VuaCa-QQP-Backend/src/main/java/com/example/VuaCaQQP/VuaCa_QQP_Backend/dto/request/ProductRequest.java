@@ -9,6 +9,7 @@ import java.util.Date;
 
 @Slf4j
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductRequest {
