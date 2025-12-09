@@ -3,6 +3,7 @@ package com.example.VuaCaQQP.VuaCa_QQP_Backend.service;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.request.CartRequest;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.dto.respone.CartRespone;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Cart;
+import com.example.VuaCaQQP.VuaCa_QQP_Backend.entity.Users;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.AppExceptions;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.exception.ErrorCode;
 import com.example.VuaCaQQP.VuaCa_QQP_Backend.mapper.CartMapper;
@@ -12,6 +13,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -29,7 +31,8 @@ public class CartService {
     }
     public CartRespone getCartByUserId(int userId)
     {
-        Cart cart = repository.findById(userId).orElseThrow(()-> new AppExceptions(ErrorCode.INVALID_KEY));
+        Users user =usersRepository.findById(userId).orElseThrow(()-> new AppExceptions(ErrorCode.INVALID_KEY));
+        Cart cart =repository.findByUser(user);
         return mapper.toCartRespone(cart);
     }
     public CartRespone createCart(CartRequest request)
