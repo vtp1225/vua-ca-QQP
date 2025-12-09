@@ -4,6 +4,7 @@ import com.example.VuaCaQQP.VuaCa_QQP_Backend.Enum.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -14,6 +15,7 @@ import java.util.Date;
 @Slf4j
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserRequest {
     @NotBlank(message = "Họ và tên không được để trống")
