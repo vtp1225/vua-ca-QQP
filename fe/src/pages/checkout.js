@@ -58,7 +58,7 @@ export default function Checkout() {
         try {
             const token = localStorage.getItem('access_token');
 
-            const response = await fetch('http://192.168.1.101:8080/VuaCaQPQ/orders', {
+            const response = await fetch('http://localhost:8080/VuaCaQPQ/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ export default function Checkout() {
                                     </div>
 
                                     <div className="space-y-2 md:col-span-2">
-                                        <label className="text-sm font-medium text-text-color/80 dark:text-gray-300">Địa chỉ giao hàng</label>
+                                        <label className="text-sm font-medium text-text-color/80 dark:text-gray-300">Địa chỉ giao hàng <span className="text-red-500">*</span></label>
                                         <input
                                             name="shippingAddress"
                                             className="w-full h-12 px-4 rounded-xl bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all"

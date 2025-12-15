@@ -32,7 +32,7 @@ export default function Header() {
         const token = localStorage.getItem("access_token");
 
         if (token) {
-            fetch("http://192.168.1.101:8080/VuaCaQPQ/users/me", {
+            fetch("http://localhost:8080/VuaCaQPQ/users/me", {
                 headers: {
                     "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"
