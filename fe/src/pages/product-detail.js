@@ -28,7 +28,7 @@ export default function ProductDetail() {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const res = await fetch(`http://192.168.1.101:8080/VuaCaQPQ/products/${productId}`);
+                const res = await fetch(`http://192.168.1.101:8080/VuaCaQPQ/products/${Id}`);
 
                 if (!res.ok) {
                     throw new Error("Lỗi kết nối server");
