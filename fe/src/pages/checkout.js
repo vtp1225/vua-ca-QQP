@@ -32,6 +32,7 @@ export default function Checkout() {
 
     const handleCheckout = async () => {
 
+
         if (!formData.fullName.trim()) {
             setError("Vui lòng nhập họ và tên.");
             return;
@@ -51,6 +52,7 @@ export default function Checkout() {
             setError("Vui lòng nhập địa chỉ giao hàng.");
             return;
         }
+
 
         setError(null);
         setLoading(true);

@@ -10,6 +10,11 @@ export default function Cart() {
         if(cartItems.length === 0){
             alert("Giỏ hàng chưa có sản phẩm");
         }
+        if(localStorage.getItem('access_token') === null) {
+            alert("Vui lòng đăng nhập để tiếp tục thanh toán");
+            navigate('/login');
+            return;
+        }
         navigate('/checkout')
     }
 

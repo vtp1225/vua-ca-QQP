@@ -13,6 +13,7 @@ export default function AppRoutes() {
         <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
             <Route path='/product-detail' element={<ProductDetail />} />
             <Route path='/product-detail/:productId' element={<ProductDetail />} />
             <Route path='/cart' element={<Cart />} />
