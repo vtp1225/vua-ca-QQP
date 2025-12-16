@@ -24,10 +24,10 @@ export default function ProductList({ keyword }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let url = "http://localhost:8080/VuaCaQPQ/products"
+                let url = "http://10.17.26.168:8080/VuaCaQPQ/products"
 
                 if (keyword) {
-                    url = `http://localhost:8080/VuaCaQPQ/products/search?name=${encodeURIComponent(keyword)}`
+                    url = `http://10.17.26.168:8080/VuaCaQPQ/products/search?name=${encodeURIComponent(keyword)}`
                 }
 
                 const res = await fetch(url)

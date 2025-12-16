@@ -41,7 +41,7 @@ export default function Register() {
         }
 
         try {
-            const res = await fetch("http://localhost:8080/VuaCaQPQ/users", {
+            const res = await fetch("http://10.17.26.168:8080/VuaCaQPQ/users", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

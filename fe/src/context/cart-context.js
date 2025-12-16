@@ -40,7 +40,7 @@ export function CartProvider({ children }) {
     if (!authToken) return;
 
     try {
-      const res = await fetch("http://localhost:8080/VuaCaQPQ/cart/items", {
+      const res = await fetch("http://10.17.26.168:8080/VuaCaQPQ/cart/items", {
         headers: {
           Authorization: `Bearer ${authToken}`,
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ export function CartProvider({ children }) {
 
   const addToCartAPI = async (product, quantity, authToken) => {
     try {
-      await fetch("http://localhost:8080/VuaCaQPQ/cart/items", {
+      await fetch("http://10.17.26.168:8080/VuaCaQPQ/cart/items", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -120,7 +120,7 @@ export function CartProvider({ children }) {
     }
 
     try {
-      const res = await fetch(`http://localhost:8080/VuaCaQPQ/cart/items/${id}`, {
+      const res = await fetch(`http://10.17.26.168:8080/VuaCaQPQ/cart/items/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -143,7 +143,7 @@ export function CartProvider({ children }) {
     }
 
     try {
-      const res = await fetch(`http://localhost:8080/VuaCaQPQ/cart/items/${id}`, {
+      const res = await fetch(`http://10.17.26.168:8080/VuaCaQPQ/cart/items/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ quantity }),

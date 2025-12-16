@@ -60,7 +60,7 @@ export default function Checkout() {
         try {
             const token = localStorage.getItem('access_token');
 
-            const response = await fetch('http://localhost:8080/VuaCaQPQ/orders', {
+            const response = await fetch('http://10.17.26.168:8080/VuaCaQPQ/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

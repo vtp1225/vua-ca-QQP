@@ -25,14 +25,14 @@ export default function Header() {
         updateToken(null);
         logOut();
         setCurrentUser("Đăng nhập");
-        navigate("/login");
+        navigate("/");
     };
 
     useEffect(() => {
         const token = localStorage.getItem("access_token");
 
         if (token) {
-            fetch("http://localhost:8080/VuaCaQPQ/users/me", {
+            fetch("http://10.17.26.168:8080/VuaCaQPQ/users/me", {
                 headers: {
                     "Authorization": `Bearer ${token}`,
                     "Content-Type": "application/json"

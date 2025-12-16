@@ -29,7 +29,7 @@ export default function Login() {
         setLoading(true);
 
         try {
-            const res = await fetch("http://localhost:8080/VuaCaQPQ/auth/token", {
+            const res = await fetch("http://10.17.26.168:8080/VuaCaQPQ/auth/token", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

@@ -13,6 +13,7 @@ export default function Home() {
             <main className="flex-grow">
                 <div>
                     <h1>Báo cáo</h1>
+                    <h1>Ha Hong Quan</h1>
                 </div>
             </main>
 
